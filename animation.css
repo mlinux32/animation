@@ -1,0 +1,163 @@
+body{
+ background: #CCC;   
+}
+/* Notre joli fenêtre */
+
+.window{
+    border: 8px solid #320;
+    position: relative;
+    height: 300px;
+    width: 300px;
+    overflow: hidden;
+    margin: 30px auto;
+    background: blue no-repeat top left/5px 5px;
+    animation: mymove 5s infinite;
+}
+
+  
+@keyframes mymove{
+    50% {
+        background: blueviolet bottom right/50px 50px;
+    }
+}
+
+#sun{
+    color: transparent;
+    position: absolute;
+    display: inline-block;
+    background: #FFF435;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    top: -15px;
+    right: 12px;
+    animation-direction: alternate;
+    animation-duration: 20s;
+    animation-name: sun;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+}
+@keyframes sun{
+    0%{
+        top: 50px;
+        left: -100px;
+    }
+    100%{
+        top:0px;
+        left: 300px;
+    }
+}
+
+/* création animation du nuage */
+.cloud{
+    color: transparent;
+    position: relative;
+    display: inline-block;
+    background: #FFF;
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    animation-duration: 18s;
+    animation-name: cloud;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes cloud{
+    0%{
+        top: 10px;
+        left: -50px;
+    }
+    12%{
+        top: 1px;
+    }
+    100%{
+        top: 10px;
+        left: 300px;
+    }
+}
+
+.cloud :before{
+    content: '<span>&nbsp;</span>*';
+    color: transparent;
+    position: relative;
+    display: inline-block;
+    background: #FFF;
+    width: 32px;
+    height: 32px;
+    border-radius: 32px;
+    top: 16px;
+    left: 0px;
+}
+
+.cloud :after{
+    content: '<span>&nbsp;</span>';
+    color: transparent;
+    position: relative;
+    display: inline-block;
+    background: #FFF;
+    width: 64px;
+    height: 64px;
+    border-radius: 32px;
+    top: -16px;
+    left: 32px;
+}
+
+.bird{
+    display: inline-block;
+    position: relative;
+    color: #333;
+    font-size: 30px;
+    left: -30px;
+    top: -10px;
+    animation-duration: 6s;
+    animation-name: fly;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.bird :nth-child(3){
+    animation-delay: 0.3s;
+}
+
+/* animation nommée fly */
+
+@keyframes fly{
+    0%{
+        transform: translate(0);
+    }
+    5%{
+        transform: translate(20px 5px);
+    }
+    15%{
+        transform: translate(40px -5px);
+    }
+    25%{
+        transform: translate(60px 5px);
+    }
+    35%{
+        transform: translate(80px -5px);
+    }
+    45%{
+        transform: translate(100px 5px);
+    }
+    55%{
+        transform: translate(120px -5px);
+    }
+    65%{
+        transform: translate(140px 5px);
+    }
+    75%{
+        transform: translate(160px -5px);
+    }
+    85%{
+        transform: translate(180px 5px);
+    }
+    95%{
+        transform: translate(200px -5px);
+    }
+    100%{
+        transform: translate(220px);
+    }
+}
+
